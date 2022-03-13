@@ -121,7 +121,7 @@ function handleSubmit(event) {
                               "lowIncome": (Boolean(data.get('lowIncome') === "Yes").toString()).toUpperCase(),
                               "gender": data.get('gender') }))
   };
-  fetch('localhost:8080/createUser', requestOptions)
+  fetch('http://localhost:8080/createUser', requestOptions)
         .then(console.log(requestOptions))
         .catch((error) => console.error("Error: ", error));
         //.then(response =>  response.json())
