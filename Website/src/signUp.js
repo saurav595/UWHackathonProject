@@ -75,6 +75,59 @@ const MySelect = ({ label, ...props }) => {
   );
 };
 
+
+// export default class UserFormClass extends React.Component {
+// constructor(props) {
+//   super(props);
+//   this.state = {
+//     user: { age: props.age,
+//             gender: props.gender,
+//             phoneNumber: props.phoneNumber,
+//             acceptedTerms: props.acceptedTerms,
+//             lowIncome: props.lowIncome,
+//             loneParent: props.loneParent,
+//             immigrant: props.immigrant,
+//             indigenous: props.indigenous,
+//             zipCode: props.zipCode,
+//             ethnicity: props.ethnicity,
+//     }
+//   }
+// }
+// };
+
+function handleSubmit(event) {
+  // Prevent default behavior
+  event.preventDefault();
+
+  const data = new FormData(event.target);
+  // Access FormData fields with `data.get(fieldName)`
+  // For example, converting to upper case
+  //data.set('age', data.get('age'));
+  //data.set('phoneNumber', data.get('phoneNumber'));
+  //data.set('', data.get(''));
+  //console.log(data.get("zipCode"));
+  //console.log(data.get("phone"));
+
+    // Simple PUT request with a JSON body using fetch
+  const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ "phoneNumber": data.get('phone'), 
+                              "age": data.get('age'),
+                              "zipcode": data.get('zipcode'),
+                              "loneParent": data.get('loneParent'),
+                              "immigrantStatus": data.get('immigrant'),
+                              "indigenous": data.get('indigenous'),
+                              "lowIncome": data.get('lowIncome'),
+                              "gender": data.get('gender') })
+  };
+  fetch('https://localhost:8080/createUser', requestOptions)
+        .then(console.log(requestOptions))
+        .then(response =>  response.json())
+        .then(data => console.log('Success: ', data))
+        .catch((error) => console.error("Error: ", error));
+};
+
 // And now we can use these
 const SignUpForm = () => {
   return (
@@ -94,7 +147,7 @@ const SignUpForm = () => {
           ethnicity: ""
         }}
       >
-        <Form action="">
+        <Form id="signup" onSubmit={handleSubmit}>
           <MyTextInput label="Age" name="age" type="number" placeholder="25" />
 
           <MyTextInput
@@ -159,9 +212,14 @@ const SignUpForm = () => {
           <button type="submit">Submit</button>
         </Form>
       </Formik>
+      <script>
+      
+      </script>
     </>
   );
 };
+
+
 
 
 // const componentDidMount = () => {
