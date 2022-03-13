@@ -112,14 +112,14 @@ function handleSubmit(event) {
   const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'mode': 'no-cors' },
-      body: JSON.parse(JSON.stringify({ "phoneNumber": data.get('phone'), 
+      body: JSON.stringify({ "phoneNumber": data.get('phone'), 
                               "age": data.get('age'),
                               "zipcode": data.get('zipCode'),
                               "loneParent": (Boolean(data.get('loneParent') === "Yes").toString()).toUpperCase(),
                               "immigrantStatus": (Boolean(data.get('immigrant') === "Yes").toString()).toUpperCase(),
                               "indigenous": (Boolean(data.get('indigenous') ===  "Yes").toString()).toUpperCase(),
                               "lowIncome": (Boolean(data.get('lowIncome') === "Yes").toString()).toUpperCase(),
-                              "gender": data.get('gender') }))
+                              "gender": data.get('gender') })
   };
   fetch('http://localhost:8080/createUser', requestOptions)
         .then(console.log(requestOptions))
