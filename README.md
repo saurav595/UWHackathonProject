@@ -3,19 +3,16 @@ This project is created for a hackathon between Northeastern University and Unit
 
 # Project Description
 
-Sommer can do this
+Our project provides a way to collect more granular data from the individuals in communities who benefit from United Way's funding. This project consists of a web app that users receiving support at food hubs can access and fill out to obtain a QR code. They are then able to scan this QR code everytime they return to the foodhub. This gives us a low friction way to track how frequently some users go to a certain foodhub, roughly how many people are being serviced, and how many are going to more than one food hub supported by United Way. Our project also contains an additional form that can be filled out by community individuals monthly, biannually, or as often as United Way would like to collect this granular data. The information in this ongoing granular data collection could then ultimately be used to generate community specific metrics, to measure the success of a project in a community, by the community's own terms.
 
 # Usage
 
-Sommer Can do this
+
 
 # Visuals
 
-Sommer can write here and get screenshots from Moni and Mitchell
+Examples of our initial intake form and a recurring form, which could be further developed with insight from a community specialist:
 
-Diagram of code structure?
-
-Images of pages created?
 
 # Installation and Requirements
 
