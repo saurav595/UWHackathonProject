@@ -1,11 +1,6 @@
-package Users;
-
-import Visits.Visit;
+package com.uw.UnitedWayQRTracking.Users;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity(name = "User")
 @Table (
@@ -88,9 +83,11 @@ public class User {
 //    @OneToMany (
 //            mappedBy = "user",
 //            orphanRemoval = true,
-//            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
+//            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+//            fetch = FetchType.LAZY
 //    )
-    //private List<Visit> userVisits = new ArrayList<>();
+//    private List<Visit> userVisits = new ArrayList<>();
+//    //TODO fix this
 
 
     public User() {
