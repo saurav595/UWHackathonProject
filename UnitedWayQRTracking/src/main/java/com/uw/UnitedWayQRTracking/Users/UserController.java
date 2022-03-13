@@ -16,12 +16,12 @@ public class UserController {
         this.userservice = userservice;
     }
 
-    @GetMapping
+    @GetMapping(path = "users")
     public List<User> getUsers() {
         return userservice.getUsers();
     }
 
-    @PostMapping(path = "/createUser")
+    @PostMapping (path = "createUser")
     public void createUser(@RequestBody User user) {
          userservice.createUser(user);
     }
