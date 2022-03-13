@@ -19,9 +19,9 @@ Examples of our initial intake form and a recurring form, which could be further
 
 The following image demonstrate the type of dashboard that could be built with this information after long term data collection:
 
-![](View_Current_ProjectS_Dashboard.PNG)
+![](View_Current_Projects_Dashboard.PNG)
 
-![](Evaluate_New_ProjectS_Dashboard.PNG)
+![](Evaluate_New_Projects_Dashboard.PNG)
 
 # Installation and Requirements
 
