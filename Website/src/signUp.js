@@ -115,17 +115,17 @@ function handleSubmit(event) {
       body: JSON.parse(JSON.stringify({ "phoneNumber": data.get('phone'), 
                               "age": data.get('age'),
                               "zipcode": data.get('zipCode'),
-                              "loneParent": Boolean(data.get('loneParent') === "Yes"),
-                              "immigrantStatus": Boolean(data.get('immigrant') === "Yes"),
-                              "indigenous": Boolean(data.get('indigenous') ===  "Yes"),
-                              "lowIncome": Boolean(data.get('lowIncome') === "Yes"),
+                              "loneParent": (Boolean(data.get('loneParent') === "Yes").toString()).toUpperCase(),
+                              "immigrantStatus": (Boolean(data.get('immigrant') === "Yes").toString()).toUpperCase(),
+                              "indigenous": (Boolean(data.get('indigenous') ===  "Yes").toString()).toUpperCase(),
+                              "lowIncome": (Boolean(data.get('lowIncome') === "Yes").toString()).toUpperCase(),
                               "gender": data.get('gender') }))
   };
   fetch('https://localhost:8080/createUser', requestOptions)
         .then(console.log(requestOptions))
-        .then(response =>  response.json())
-        .then(data => console.log('Success: ', data))
         .catch((error) => console.error("Error: ", error));
+        //.then(response =>  response.json())
+        //.then(data => console.log('Success: ', data))
 };
 
 // And now we can use these
