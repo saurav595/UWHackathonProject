@@ -1,11 +1,6 @@
-package Users;
-
-import Visits.Visit;
+package com.uw.UnitedWayQRTracking.Users;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity(name = "User")
 @Table (
@@ -17,20 +12,6 @@ import java.util.List;
 public class User {
 
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
-    @Column(
-            name = "userId"
-    )
-    private Long userID;
-
     @Column(
             name = "phoneNumber",
             nullable = false
@@ -80,17 +61,12 @@ public class User {
 
     @Column(
             name = "gender",
-            nullable = false,
-            columnDefinition = "TEXT"
+            nullable = false
+
     )
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
-//    @OneToMany (
-//            mappedBy = "user",
-//            orphanRemoval = true,
-//            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
-//    )
-    //private List<Visit> userVisits = new ArrayList<>();
 
 
     public User() {
@@ -107,17 +83,6 @@ public class User {
         this.gender = gender;
     }
 
-    public User(Long userID, Long phoneNumber, int age, String zipcode, boolean loneParent, boolean immigrantStatus, boolean indigenous, boolean lowIncome, Gender gender) {
-        this.userID = userID;
-        this.phoneNumber = phoneNumber;
-        this.age = age;
-        this.zipcode = zipcode;
-        this.loneParent = loneParent;
-        this.immigrantStatus = immigrantStatus;
-        this.indigenous = indigenous;
-        this.lowIncome = lowIncome;
-        this.gender = gender;
-    }
 
     public Gender getGender() {
         return gender;
@@ -186,16 +151,16 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userID=" + userID +
-                ", phoneNumber=" + phoneNumber +
+                "phoneNumber=" + phoneNumber +
                 ", age=" + age +
                 ", zipcode='" + zipcode + '\'' +
                 ", loneParent=" + loneParent +
                 ", immigrantStatus=" + immigrantStatus +
                 ", indigenous=" + indigenous +
                 ", lowIncome=" + lowIncome +
+                ", gender=" + gender +
                 '}';
     }
 
-    enum Gender {Male, Female}
+    enum Gender {Male, Female, Other}
 }

@@ -1,4 +1,4 @@
-package Locations;
+package com.uw.UnitedWayQRTracking.Locations;
 
 public class Location {
     private Long locationId;

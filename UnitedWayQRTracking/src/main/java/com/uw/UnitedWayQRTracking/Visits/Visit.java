@@ -1,9 +1,10 @@
-package Visits;
+package com.uw.UnitedWayQRTracking.Visits;
 
 import java.time.LocalDate;
 
 public class Visit {
 
+    private Long visitID;
     private LocalDate date;
     private Long locationId;
     private Long userId;
