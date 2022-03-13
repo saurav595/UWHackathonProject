@@ -38,7 +38,7 @@ const App = () => {
       children={() => (
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-          <AppRoute exact path="/SignUp" component={SignUp} layout={LayoutDefault} />
+          <AppRoute exact path="/SignUp" component={SignUp} />
         </Switch>
       )} />
   );

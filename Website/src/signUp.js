@@ -94,7 +94,7 @@ const SignUpForm = () => {
           ethnicity: ""
         }}
       >
-        <Form>
+        <Form action="">
           <MyTextInput label="Age" name="age" type="number" placeholder="25" />
 
           <MyTextInput
@@ -162,6 +162,27 @@ const SignUpForm = () => {
     </>
   );
 };
+
+
+// const componentDidMount = () => {
+//   // Simple PUT request with a JSON body using fetch
+//   const requestOptions = {
+//       method: 'PUT',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ "phoneNumber": initialValues.phoneNumber, 
+//                               "age": age,
+//                               "zipcode": zipCode,
+//                               "loneParent": loneParent,
+//                               "immigrantStatus": immigrant,
+//                               "indigenous": indigenous,
+//                               "lowIncome": lowIncome,
+//                               "gender": gender })
+//   };
+//   fetch('https://localhost:8080/createUser', requestOptions)
+//         .then(response => response.json())
+//         .then(data => this.setState({ postId: data.id }));
+// }
+
 
 function App() {
   return <SignUpForm />;
