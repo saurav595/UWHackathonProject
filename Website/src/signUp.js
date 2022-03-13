@@ -110,16 +110,16 @@ function handleSubmit(event) {
 
     // Simple PUT request with a JSON body using fetch
   const requestOptions = {
-      method: 'PUT',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ "phoneNumber": data.get('phone'), 
+      body: JSON.parse(JSON.stringify({ "phoneNumber": data.get('phone'), 
                               "age": data.get('age'),
-                              "zipcode": data.get('zipcode'),
-                              "loneParent": data.get('loneParent'),
-                              "immigrantStatus": data.get('immigrant'),
-                              "indigenous": data.get('indigenous'),
-                              "lowIncome": data.get('lowIncome'),
-                              "gender": data.get('gender') })
+                              "zipcode": data.get('zipCode'),
+                              "loneParent": Boolean(data.get('loneParent') === "Yes"),
+                              "immigrantStatus": Boolean(data.get('immigrant') === "Yes"),
+                              "indigenous": Boolean(data.get('indigenous') ===  "Yes"),
+                              "lowIncome": Boolean(data.get('lowIncome') === "Yes"),
+                              "gender": data.get('gender') }))
   };
   fetch('https://localhost:8080/createUser', requestOptions)
         .then(console.log(requestOptions))
