@@ -111,7 +111,7 @@ function handleSubmit(event) {
     // Simple PUT request with a JSON body using fetch
   const requestOptions = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'mode': 'no-cors' },
       body: JSON.parse(JSON.stringify({ "phoneNumber": data.get('phone'), 
                               "age": data.get('age'),
                               "zipcode": data.get('zipCode'),
