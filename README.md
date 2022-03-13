@@ -13,6 +13,15 @@ Our project provides a way to collect more granular data from the individuals in
 
 Examples of our initial intake form and a recurring form, which could be further developed with insight from a community specialist:
 
+![](sign_up.png)
+
+![](survey.png)
+
+The following image demonstrate the type of dashboard that could be built with this information after long term data collection:
+
+![](View_Current_Project_Dashboard.png)
+
+![](Evaluate_New_Project_Dashboard.png)
 
 # Installation and Requirements
 
